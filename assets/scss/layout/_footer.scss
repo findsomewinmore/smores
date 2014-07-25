@@ -1,0 +1,10 @@
+/**
+ * Device:   Mobile 
+ * Section:  Footer
+ * Because we code mobile first we do not 
+ * need to put our css in a media query
+ *
+ * If you NEED to use a mobile only media query use the following mixins
+ * @media #{$small-up} { }
+ * @media #{$small-only} { }
+**/

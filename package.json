@@ -1,0 +1,25 @@
+{
+  "name": "FiWiStarterKit",
+  "version": "1.0.0",
+  "description": "Fiwi Starter Kit",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install && sed -i '' 's,foundation/functions,functions,g' assets/bower_components/foundation/scss/foundation/_settings.scss && grunt && grunt watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Findsome Winmore",
+  "repository": {
+    "type": "git",
+    "url": "https://slsapp.com/git/websolvers/fiwistartertheme.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-sass": "^0.14.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-contrib-clean": "^0.5.0"
+  }
+}

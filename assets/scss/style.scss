@@ -1,0 +1,62 @@
+// FiWi Starter kit
+// findsomewin,o
+// Licensed under MIT Open Source
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+/**
+ * Import custom variable for use within project as well  
+ * as in /bower_components/foundation/scss/foundation/settings
+**/
+
+@import "variables"; 
+@import "../bower_components/foundation/scss/foundation/settings";
+
+
+/**
+ * Mixins (Like functions for Sass)  
+**/
+@import "mixins";
+
+/**
+ * Normazlize (Normalize things like margin, padding, etc)  
+**/
+@import "normalize" ;
+
+/**
+ * Main Foundation file  
+**/
+@import "../bower_components/foundation/scss/foundation";
+
+
+/**
+ * Global Typography, feel free to use media queries in here.  
+**/
+@import "typography"; 
+
+/**
+ * Animations, comment out if you do not need. 
+**/
+@import "animate";
+
+/**
+ * Mobile First  
+**/
+@import "layout/header";
+@import "layout/footer";
+@import "layout/main";
+
+/**
+ * Tablet Second  
+**/
+@import "tablet/header";
+@import "tablet/footer";
+@import "tablet/main";
+
+/**
+ * Desktop Third  
+**/
+@import "desktop/header";
+@import "desktop/footer";
+@import "desktop/main";
