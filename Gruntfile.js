@@ -52,9 +52,6 @@ module.exports = function(grunt) {
             '!assets/bower_components/foundation/js/vendor/modernizr.js',
             'assets/js/_*.js'
           ],
-          'assets/js/vendor/modernizr.min.js': [
-            'assets/bower_components/modernizr/modernizr.js'
-          ],
           'assets/js/vendor/html5shiv.min.js': [
             'assets/bower_components/html5shiv/dist/html5shiv.min.js'
           ],
@@ -107,6 +104,20 @@ module.exports = function(grunt) {
         ]
       }
     },
+    modernizr: {
+      build: {
+        devFile: 'assets/bower_components/modernizr/modernizr.js',
+        outputFile: 'assets/js/vendor/modernizr.min.js',
+        files: {
+          'src': [
+            ['assets/js/scripts.min.js'],
+            ['assets/css/styles.min.css']
+          ]
+        },
+        uglify: true,
+        parseFiles: true
+      }
+    },
     watch: {
       sass: {
         files: [
@@ -149,6 +160,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-sass');
 
   // Register tasks
@@ -156,7 +168,8 @@ module.exports = function(grunt) {
     'clean',
     'sass:dist',
     'uglify',
-    'imagemin'
+    'imagemin',
+    'modernizr'
   ]);
   grunt.registerTask('dev', [
     'watch'
