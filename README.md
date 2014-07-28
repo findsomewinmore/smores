@@ -49,3 +49,47 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 
 * `grunt` — Run all tasks: compile Sass to CSS, concatenate and validate JS, optimize images, build lean Modernizr file, etc.
 * `grunt watch` — Run appropriate task when a file is changed.
+
+###File Structure (See file comments for futher documentation)
+ * assets
+	* bower_components (This is where bower stores our front end dependencies; do not source control)
+	* css (Compiled, minified Sass)
+		* ie-[version].css (IE only stylesheet)
+		* styles.min.css (Sass compiles to here)
+	* fonts (3rd part font files not available as webfonts)
+	* img 
+		* favicons (All favicons, tile icons, and homescreen icons are stored here)
+		* src (Store uncompressed images and photos here, they will be optimized and saved in assets/img/)
+	* js (Source and compiled Javascript. Source Javascript files begine with an underscore. Ex: \_main.js)
+		* \_main.js (Main js file with DOM based routing)
+		* scripts.min.js (\_main.js and other plugins compile to this)
+	* scss (Source Sass files)
+		* desktop (Desktop sized Sass files go here)
+			* \_header.scss
+			* \_main.scss
+			* \_footer_scss
+		* tablet (Desktop sized Sass files go here)
+			 * \_header.scss
+			* \_main.scss
+			* \_footer_scss
+		* Layout (Mobile first layout goes here)
+			* \_header.scss
+			* \_main.scss
+			* \_footer_scss
+		* \_animate.scss 
+		* \_minins.scss
+		* \_normalize.scss
+		* \_typography.scss
+		* \_variables.scss
+		* style.scss
+* node_modules (This is where grunt and its dependecies are stored; Do not version control)
+* .bowerrc (Bower config file, we change the default install directory)
+* .editorconfig (This ensures our entire team uses the same tabs and charset)
+* .gitignore (Tell git to ignore bower_components, node_modules, and .DS_Store)
+* .jshintrc (JS Hint config)
+* Gruntfile.js (Grunt task declarations)
+* package.json (Project package and dependencies list)
+* bower.json (Project Bower dependencies)
+* _site.html (Foundation test page)
+* ...
+* Wordpress theme files

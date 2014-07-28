@@ -1,7 +1,20 @@
+/**
+ * Starting Gruntfile.js
+ *
+ * This is the most basic Gruntfile that we will use.
+ * Browse through the code for more detailed comments on
+ * individual tasks and functions
+ */
 'use strict';
 module.exports = function(grunt) {
 
   grunt.initConfig({
+
+/**
+ * This is our jshint task.
+ * It validates our javascript and
+ * gives us feedback.
+ */
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -9,10 +22,15 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'assets/js/*.js',
+        //When a file begins with !, that means do not add the file
         '!assets/js/vendor/*.js',
         '!assets/js/scripts.min.js'
       ]
     },
+/**
+ * This is our sass task.
+ * It compiles our sass into css.
+ */
     sass: {
       dist: {
         files: {
@@ -21,11 +39,21 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          outputStyle: 'compressed',
+          //Minify our css
+          outputStyle: 'compressed', 
+          //Do not create a .sass-cache directory
           noCache: 'true'
         }
       }
     },
+/**
+ * This is our uglify task.
+ * It concatonates and minifies 
+ * our javascript.
+ *
+ * Please comment out or delete any
+ * references to unused foundation plugins.
+ */
     uglify: {
       dist: {
         files: {
@@ -64,6 +92,12 @@ module.exports = function(grunt) {
         }
       }
     },
+/**
+ * This is our imagemin task.
+ * It optimizes our PNGs and JPGs.
+ * If you want to optimize an image, make
+ * sure to put it in the assets/img/src/ directory
+ */
     imagemin: {
       png: {
         options: {
@@ -78,7 +112,7 @@ module.exports = function(grunt) {
             src: [
               '**/*.png'
             ],
-            // Could also match cwd line above. i.e. project-directory/img/
+            // Could also match cwd line above.
             dest: 'assets/img/',
             ext: '.png'
           }
@@ -97,13 +131,20 @@ module.exports = function(grunt) {
             src: [
               '**/*.jpg'
             ],
-            // Could also match cwd. i.e. project-directory/img/
+            // Could also match cwd. 
             dest: 'assets/img/',
             ext: '.jpg'
           }
         ]
       }
     },
+/**
+ * This is our modernizr task.
+ * It looks at our css and js
+ * and generates a lean build of
+ * modernizr with only the tests
+ * that we need. 
+ */
     modernizr: {
       build: {
         devFile: 'assets/bower_components/modernizr/modernizr.js',
@@ -118,6 +159,13 @@ module.exports = function(grunt) {
         parseFiles: true
       }
     },
+/**
+ * This is our watch task.
+ * It watches certain types
+ * of files for certain tasks
+ * and then executes the grunt default
+ * command when a file is changed/added
+ */
     watch: {
       sass: {
         files: [
@@ -146,6 +194,12 @@ module.exports = function(grunt) {
         ]
       }
     },
+/**
+ * This is our clear task.
+ * It deletes the conents of the files
+ * before anything is compliled into them
+ * to prevent code from being duplicated
+ */
     clean: {
       dist: [
         'assets/css/styles.min.css',

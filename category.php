@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found)
+ * The template for displaying Category pages
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
  * @subpackage FiWi_Starter_Kit
