@@ -3,7 +3,7 @@
  * Add Foundation Topbar Walker
  *
  * Foundation Top Bar Usage Example
- *<div class="top-bar-container fixed contain-to-grid">
+ * <div class="top-bar-container fixed contain-to-grid">
  *   <nav class="top-bar">
  *       <ul>
  *           <li class="name">
