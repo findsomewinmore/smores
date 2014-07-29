@@ -24,7 +24,7 @@ function fiwi_scripts() {
   if (!is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', $assets['jquery'], array(), null, true);
-    add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
+    add_filter('script_loader_src', 'fiwi_jquery_local_fallback', 10, 2);
   }
 
   wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
