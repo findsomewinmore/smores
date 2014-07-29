@@ -21,4 +21,17 @@
  * @subpackage FiWi_Starter_Kit
  * @since FiWi Starter Kit 1.0
  */
-	
+
+$fiwi_includes = array(
+  'lib/init.php',            // Initial theme setup and constants
+  'lib/nav.php',             // Custom nav modifications
+  'lib/scripts.php',         // Scripts and stylesheets
+);
+
+foreach ($fiwi_includes as $file) {
+  if (!$filepath = locate_template($file)) {
+    trigger_error(print('Error locating %s for inclusion'), E_USER_ERROR);
+  }
+  require_once $filepath;
+}
+unset($file, $filepath);
