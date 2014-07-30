@@ -11,16 +11,12 @@ FIWI Starter Kit is an on-going project and an ever evolving repository. As out 
 * [Grunt](http://gruntjs.com) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, optimizing PNGs and JPEGs, versioning assets, and generating lean Modernizr builds
 * [Bower](http://bower.io/) for front-end package management
 * [HTML5 Boilerplate](http://html5boilerplate.com/)
-  * We use a little older version of HTML5 Boilerplate. We still like Paul Irish's IE version detection. Hey, in IE's case, browser detection, _is_ feature detection. 
+  * We use a little older version of HTML5 Boilerplate. We still like Paul Irish's IE version detection. Hey, in IE's case, browser detection _is_ feature detection. 
   * The latest [jQuery](http://jquery.com/) via Google CDN, with a local fallback (Bower)
   * The latest [Modernizr](http://modernizr.com/) build for feature detection, with lean builds with Grunt
   * An optimized Google Analytics snippet
 * [Foundation 5](http://foundation.zurb.com)
 * Organized file and asset structure
-
-### Feature Wish List
-* Foundation Topbar Walker Menu (Coming Soon)
-* Micro Format examples. 
 
 ## Installation
 
@@ -29,7 +25,7 @@ FIWI Starter Kit is an on-going project and an ever evolving repository. As out 
 3. Remove the .git directory (This will preven you from commiting your personal project to the FIWI Starter Kit repositiory)
 4. Initialize a new Git repo with `git init`
 
-## Theme development
+## Development
 
 FIWI Starter Kit uses [Grunt](http://gruntjs.com/) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, optimizing PNGs and JPEGs, versioning assets, and generating lean Modernizr builds.
 
@@ -50,7 +46,7 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 * `grunt` — Run all tasks: compile Sass to CSS, concatenate and validate JS, optimize images, build lean Modernizr file, etc.
 * `grunt watch` — Run appropriate task when a file is changed.
 
-###File Structure (See file comments for futher documentation)
+###File Structure (See file comments for futher documentation; files vary depending on branch)
  * assets
 	* bower_components (This is where bower stores our front end dependencies; do not source control)
 	* css (Compiled, minified Sass)
@@ -82,6 +78,10 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 		* \_typography.scss
 		* \_variables.scss
 		* style.scss
+* lib (This is where we put all the functions included in functions.php)
+	* init.php (Initialization stuff like theme support and sidebars)
+	* nav.php (Custom nav walker for Top Bar and examples)
+	* scripts.php (Enqueue scripts and stylesheets)
 * node_modules (This is where grunt and its dependecies are stored; Do not version control)
 * .bowerrc (Bower config file, we change the default install directory)
 * .editorconfig (This ensures our entire team uses the same tabs and charset)
@@ -90,6 +90,5 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 * Gruntfile.js (Grunt task declarations)
 * package.json (Project package and dependencies list)
 * bower.json (Project Bower dependencies)
-* _site.html (Foundation test page)
 * ...
 * Wordpress theme files
