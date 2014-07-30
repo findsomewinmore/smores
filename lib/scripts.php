@@ -8,7 +8,7 @@ function fiwi_scripts() {
       'js'        => '/assets/js/scripts.min.js',
       'modernizr' => '/assets/js/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js',
-      'jquery_fallback'   => 'assets/js/vendor/jquery.min.js'
+      'jquery_fallback'   => 'assets/js/vendor/jquery.min.js',
       'html5shiv' => 'assets/js/vendor/html5shiv.min.js',
       'respond'   => 'assets/js/vendor/respond.min.js'
     );
