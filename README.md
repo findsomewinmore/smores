@@ -37,7 +37,7 @@ S'mores uses [Grunt](http://gruntjs.com/) for compiling Sass to CSS, checking fo
 From the command line:
 
 1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
-2. Navigate to the theme directory, then run `npm install`. npm will look at `package.json` and automatically install the necessary dependencies. It will automatically run `bower install`, which installs front-end packages defined in `bower.json`. 
+2. Navigate to the theme directory, then run `npm install --unsafe-perm`. npm will look at `package.json` and automatically install the necessary dependencies. It will automatically run `bower install`, which installs front-end packages defined in `bower.json`. 
 
 When completed, you'll be able to see a Foundation 5 sample page by viewing _site.html in your browser. 
 
