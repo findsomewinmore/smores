@@ -1,10 +1,10 @@
-# [FIWI Starter Kit](https://websolvers.springloops.io/project/102253)
+# [S'mores](https://github.com/findsomewinmore/smores)
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-FIWI Starter Kit is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Foundation](http://foundation.zurb.com) that will help the FIWI Creative Team (and others) create better Wordpress themes.
+S'mores is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Foundation](http://foundation.zurb.com) that will help the FIWI Creative Team (and others) create better Wordpress themes.
 
-FIWI Starter Kit is an on-going project and an ever evolving repository. As out systems and processees change, so will FIWI Starter Kit.
+S'mores is an on-going project and an ever evolving repository. As out systems and processees change, so will S'mores.
 
 ## Features
 
@@ -20,14 +20,14 @@ FIWI Starter Kit is an on-going project and an ever evolving repository. As out 
 
 ## Installation
 
-1. Clone the git repo - `git clone https://slsapp.com/git/websolvers/fiwistartertheme.git`
+1. Clone the git repo - `git clone https://github.com/findsomewinmore/smores.git`
 2. Rename the directory to the name of your theme or website.
-3. Remove the .git directory (This will preven you from commiting your personal project to the FIWI Starter Kit repositiory)
+3. Remove the .git directory (This will preven you from commiting your personal project to the S'mores repositiory)
 4. Initialize a new Git repo with `git init`
 
 ## Development
 
-FIWI Starter Kit uses [Grunt](http://gruntjs.com/) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, optimizing PNGs and JPEGs, versioning assets, and generating lean Modernizr builds.
+S'mores uses [Grunt](http://gruntjs.com/) for compiling Sass to CSS, checking for JS errors, live reloading, concatenating and minifying files, optimizing PNGs and JPEGs, versioning assets, and generating lean Modernizr builds.
 
 
 ### Install Grunt
