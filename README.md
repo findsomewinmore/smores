@@ -4,7 +4,7 @@
 
 S'mores is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Foundation](http://foundation.zurb.com) that will help the FIWI Creative Team (and others) create better Wordpress themes.
 
-S'mores is an on-going project and an ever evolving repository. As out systems and processees change, so will S'mores.
+S'mores is an on-going project and an ever evolving repository. As our systems and processees change, so will S'mores.
 
 ## Features
 
