@@ -92,3 +92,14 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 * bower.json (Project Bower dependencies)
 * ...
 * Wordpress theme files
+
+# Credits
+
+![Findsome & Winmore](http://findsomewinmore.com/wp-content/themes/fiwi/images/logo.png)
+
+S'mores is maintained and funded by [Findsome & Winmore](http://findsomewinmore.com). This open source project is brought to you by dozens of other open source projects. We like to give credit to those that we have borrowed from. If you find a code snippet we forgot to credit, please submit a pull request for a README.md update.
+
+
+# License
+
+Refills is Copyright © 2014 thoughtbot. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.txt) file.
