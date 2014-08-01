@@ -102,4 +102,4 @@ S'mores is maintained and funded by [Findsome & Winmore](http://findsomewinmore.
 
 # License
 
-Refills is Copyright © 2014 thoughtbot. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.txt) file.
+S'mores is Copyright © 2014 Findsome & Winmore. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.txt) file.
