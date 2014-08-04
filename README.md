@@ -94,7 +94,7 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 
 # Credits
 
-![Findsome & Winmore](http://findsomewinmore.com/wp-content/themes/Smores/images/logo.png)
+##Findsome & Winmore
 
 S'mores is maintained and funded by [Findsome & Winmore](http://findsomewinmore.com). This open source project is brought to you by dozens of other open source projects. We like to give credit to those that we have borrowed from. If you find a code snippet we forgot to credit, please submit a pull request for a README.md update.
 
