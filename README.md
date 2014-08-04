@@ -2,7 +2,7 @@
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-S'mores is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Foundation](http://foundation.zurb.com) that will help the FIWI Creative Team (and others) create better Wordpress themes.
+S'mores is a WordPress starter theme based on [HTML5 Boilerplate](http://html5boilerplate.com/) & [Foundation](http://foundation.zurb.com) that will help the FiWi Creative Team (and others) create better Wordpress themes.
 
 S'mores is an on-going project and an ever evolving repository. As our systems and processees change, so will S'mores.
 
@@ -96,7 +96,7 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 
 # Credits
 
-![Findsome & Winmore](http://findsomewinmore.com/wp-content/themes/fiwi/images/logo.png)
+![Findsome & Winmore](http://findsomewinmore.com/wp-content/themes/Smores/images/logo.png)
 
 S'mores is maintained and funded by [Findsome & Winmore](http://findsomewinmore.com). This open source project is brought to you by dozens of other open source projects. We like to give credit to those that we have borrowed from. If you find a code snippet we forgot to credit, please submit a pull request for a README.md update.
 

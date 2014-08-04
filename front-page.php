@@ -11,9 +11,8 @@
  *
  * @link http://codex.wordpress.org/Creating_a_Static_Front_Page
  *
- * @package WordPress
- * @subpackage FiWi_Starter_Kit
- * @since FiWi Starter Kit 1.0
+ * @package Smores
+ * @since Smores 1.0
  */
 ?>
 

@@ -29,7 +29,7 @@ register_nav_menus(array(
 ));
  
 // the left top bar
-function fiwi_foundation_top_bar_l() {
+function smores_foundation_top_bar_l() {
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
         'container_class' => 'menu',                // class of container
@@ -47,7 +47,7 @@ function fiwi_foundation_top_bar_l() {
 } // end left top bar
  
 // the right top bar
-function fiwi_foundation_top_bar_r() {
+function smores_foundation_top_bar_r() {
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
         'container_class' => '',                // class of container

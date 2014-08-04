@@ -17,18 +17,18 @@
  * For more information on hooks, actions, and filters,
  * @link http://codex.wordpress.org/Plugin_API
  *
- * @package WordPress
- * @subpackage FiWi_Starter_Kit
- * @since FiWi Starter Kit 1.0
+ * @package Smores
+ * @since Smores 1.0
  */
 
-$fiwi_includes = array(
+$smores_includes = array(
+  'lib/classes/smores.php',            // Initial theme setup and constants	
   'lib/init.php',            // Initial theme setup and constants
   'lib/nav.php',             // Custom nav modifications
   'lib/scripts.php',         // Scripts and stylesheets
 );
 
-foreach ($fiwi_includes as $file) {
+foreach ($smores_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(print('Error locating %s for inclusion'), E_USER_ERROR);
   }

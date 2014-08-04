@@ -1,7 +1,7 @@
 {
-  "name": "FiWiStarterKit",
-  "version": "1.0.0",
-  "description": "Fiwi Starter Kit",
+  "name": "Smores",
+  "version": "1.1.0",
+  "description": "Foundation Based Wordpress Starter Kit",
   "main": "Gruntfile.js",
   "scripts": {
     "postinstall": "node_modules/.bin/bower install && sed -i '' 's,foundation/functions,functions,g' assets/bower_components/foundation/scss/foundation/_settings.scss && grunt && grunt watch",
@@ -10,7 +10,7 @@
   "author": "Findsome Winmore",
   "repository": {
     "type": "git",
-    "url": "https://slsapp.com/git/websolvers/fiwistartertheme.git"
+    "url": "https://github.com/findsomewinmore/smores"
   },
   "license": "MIT",
   "devDependencies": {

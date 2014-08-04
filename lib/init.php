@@ -1,8 +1,8 @@
 <?php
 /**
- * FiWi initial setup
+ * Smores initial setup
  */
-function fiwi_setup() {
+function smores_setup() {
 
   //Add menus
   add_theme_support('menus');
@@ -17,12 +17,12 @@ function fiwi_setup() {
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
   add_theme_support('html5', array('caption'));
 }
-add_action('after_setup_theme', 'fiwi_setup');
+add_action('after_setup_theme', 'smores_setup');
 
 /**
  * Register sidebars
  */
-function fiwi_widgets_init() {
+function smores_widgets_init() {
   // register_sidebar(array(
   //   'name'          => 'Primary',
   //   'id'            => 'sidebar-primary',
@@ -32,4 +32,4 @@ function fiwi_widgets_init() {
   //   'after_title'   => '</h3>',
   // ));
 }
-add_action('widgets_init', 'fiwi_widgets_init');
+add_action('widgets_init', 'smores_widgets_init');
