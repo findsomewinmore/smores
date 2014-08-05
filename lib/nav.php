@@ -28,102 +28,149 @@ register_nav_menus(array(
     'top-bar-r' => 'Right Top Bar'
 ));
  
-// the left top bar
-function smores_foundation_top_bar_l() {
-    wp_nav_menu(array( 
-        'container' => false,                           // remove nav container
-        'container_class' => 'menu',                // class of container
-        'menu' => '',                               // menu name
-        'menu_class' => 'top-bar-menu left',            // adding custom nav class
-        'theme_location' => 'top-bar-l',                // where it's located in the theme
-        'before' => '',                                 // before each link <a> 
-        'after' => '',                                  // after each link </a>
-        'link_before' => '',                            // before each link text
-        'link_after' => '',                             // after each link text
-        'depth' => 5,                                   // limit the depth of the nav
-        'fallback_cb' => false,                         // fallback function (see below)
-        'walker' => new top_bar_walker()
-    ));
-} // end left top bar
+/*
+http://codex.wordpress.org/Function_Reference/wp_nav_menu
+*/
  
 // the right top bar
-function smores_foundation_top_bar_r() {
+function foundation_top_bar_r() {
+    echo '<section class="top-bar-section">';
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
         'container_class' => '',                // class of container
         'menu' => '',                               // menu name
-        'menu_class' => 'top-bar-menu right',           // adding custom nav class
-        'theme_location' => 'top-bar-r',                // where it's located in the theme
+        'menu_class' => 'right',            // adding custom nav class
+        'theme_location' => 'top-bar-menu',                // where it's located in the theme
         'before' => '',                                 // before each link <a> 
         'after' => '',                                  // after each link </a>
         'link_before' => '',                            // before each link text
         'link_after' => '',                             // after each link text
         'depth' => 5,                                   // limit the depth of the nav
-        'fallback_cb' => false,                         // fallback function (see below)
-        'walker' => new top_bar_walker()
+          'fallback_cb' => 'main_nav_top_bar_fb',         // fallback function (see below)
+        'walker' => new Top_Bar_Walker()
     ));
+    echo '</section>';
+} // end right top bar
+
+// the right top bar
+function foundation_top_bar_l() {
+    echo '<section class="top-bar-section">';
+    wp_nav_menu(array( 
+        'container' => false,                           // remove nav container
+        'container_class' => '',                // class of container
+        'menu' => '',                               // menu name
+        'menu_class' => 'left',            // adding custom nav class
+        'theme_location' => 'top-bar-menu',                // where it's located in the theme
+        'before' => '',                                 // before each link <a> 
+        'after' => '',                                  // after each link </a>
+        'link_before' => '',                            // before each link text
+        'link_after' => '',                             // after each link text
+        'depth' => 5,                                   // limit the depth of the nav
+          'fallback_cb' => 'main_nav_top_bar_fb',         // fallback function (see below)
+        'walker' => new Top_Bar_Walker()
+    ));
+    echo '</section>';
 } // end right top bar
 
 
+
 /*
-Customize the output of menus for Foundation top bar classes and add descriptions
- 
-http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output
-http://code.hyperspatial.com/1514/twitter-bootstrap-walker-classes/
+http://codex.wordpress.org/Template_Tags/wp_list_pages
 */
-class top_bar_walker extends Walker_Nav_Menu {
-    function start_el(&$output, $item, $depth, $args) {
-        global $wp_query;
-        
-        $indent = ($depth) ? str_repeat("\t", $depth) : '';
+function main_nav_top_bar_fb() {
+
+    echo '<ul class="right">';
+    wp_list_pages(array(
+        'depth'        => 0,
+        'child_of'     => 0,
+        'exclude'      => '',
+        'include'      => '',
+        'title_li'     => '',
+        'echo'         => 1,
+        'authors'      => '',
+        'sort_column'  => 'menu_order, post_title',
+        'link_before'  => '',
+        'link_after'   => '',
+        'walker'       => new Top_Bar_Page_Walker(),
+        'post_type'    => 'page',
+        'post_status'  => 'publish' 
+    ));
+    echo "</ul>";
+}
+
+class Top_Bar_Walker extends Walker_Nav_Menu {
  
-        $class_names = $value = '';
- 
-        $classes = empty($item->classes) ? array() : (array) $item->classes;
-        
-    $classes[] = ($item->current) ? 'active' : '';
-        $classes[] = ($args->has_children) ? 'has-dropdown' : '';
-        
-    $args->link_before = (in_array('section', $classes)) ? '<label>' : '';
-    $args->link_after = (in_array('section', $classes)) ? '</label>' : '';
-    $output .= (in_array('section', $classes)) ? '<li class="divider"></li>' : '';
- 
-        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args ) );
-        $class_names = strlen(trim($class_names)) > 0 ? ' class="'.esc_attr($class_names).'"' : '';
-        
-    $output .= ($depth == 0) ? $indent.'<li class="divider"></li>' : '';
-        $output .= $indent.'<li id="menu-item-'.$item->ID.'"'.$value.$class_names.'>';
- 
-        $attributes  = !empty($item->attr_title) ? ' title="' .esc_attr($item->attr_title).'"' : '';
-        $attributes .= !empty($item->target)     ? ' target="'.esc_attr($item->target    ).'"' : '';
-        $attributes .= !empty($item->xfn)        ? ' rel="'   .esc_attr($item->xfn       ).'"' : '';
-        $attributes .= !empty($item->url)        ? ' href="'  .esc_attr($item->url       ).'"' : '';
-        
-    $item_output  = $args->before;
-    $item_output .= (!in_array('section', $classes)) ? '<a'.$attributes.'>' : '';
-    $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID);
-    $item_output .= $args->link_after;
-    $item_output .= (!in_array('section', $classes)) ? '</a>' : '';
-    $item_output .= $args->after;
- 
-        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-    }
-    function end_el(&$output, $item, $depth) {
-        $output .= '</li>'."\n";
-    }
-    function start_lvl(&$output, $depth) {
-        $indent  = str_repeat("\t", $depth);
-        $output .= "\n".$indent.'<ul class="sub-menu dropdown">'."\n";
-    }
-    function end_lvl(&$output, $depth) {
-        $indent  = str_repeat("\t", $depth);
-        $output .= $indent.'</ul>'."\n";
-    }       
     function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
-        $id_field = $this->db_fields['id'];
-        if (is_object($args[0])) {
-            $args[0]->has_children = ! empty($children_elements[$element->$id_field]);
+        $element->has_children = !empty($children_elements[$element->ID]);
+        $element->classes[] = ($element->current || $element->current_item_ancestor) ? 'active' : '';
+        $element->classes[] = ($element->has_children) ? 'has-dropdown' : '';
+        
+        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+    }
+    
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $item_html = '';
+        parent::start_el($item_html, $item, $depth, $args); 
+        
+        $output .= ($depth == 0) ? '<li class="divider"></li>' : '';
+        
+        $classes = empty($item->classes) ? array() : (array) $item->classes;    
+        
+        if(in_array('label', $classes)) {
+            $output .= '<li class="divider"></li>';
+            $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html);
         }
-        return parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-    }   
+                
+                if ( in_array('divider', $classes) ) {
+                    $item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
+                }
+        
+        $output .= $item_html;
+    }
+    
+    function start_lvl(&$output, $depth = 0, $args = array()) {
+        $output .= "\n<ul class=\"sub-menu dropdown\">\n";
+    }
+    
 } // end top bar walker
+
+class Top_Bar_Page_Walker extends Walker_Page {
+
+    function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
+
+        // $element->has_children = !empty($children_elements[$element->ID]);     
+        
+        // $element->classes[] = ($element->current || $element->current_item_ancestor) ? 'active' : '';
+
+        // $element->classes[] = $element->has_children ? 'has-dropdown' : '';
+        
+        // die(print_r($element->classes));
+   
+        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+    }
+    
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $item_html = '';
+        parent::start_el($item_html, $item, $depth, $args); 
+        
+        $output .= ($depth == 0) ? '<li class="divider"></li>' : '';
+        
+        $classes = empty($item->classes) ? array() : (array) $item->classes;    
+        
+        if(in_array('label', $classes)) {
+            $output .= '<li class="divider"></li>';
+            $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html);
+        }
+                
+                if ( in_array('divider', $classes) ) {
+                    $item_html = preg_replace( '/<a[^>]*>( .* )<\/a>/iU', '', $item_html );
+                }
+        
+        $output .= $item_html;
+    }
+    
+    function start_lvl(&$output, $depth = 0, $args = array()) {
+        $output .= "\n<ul class=\"sub-menu dropdown\">\n";
+    }
+
+} /* end topbar page walker */
