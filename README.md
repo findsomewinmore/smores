@@ -77,20 +77,20 @@ When completed, you'll be able to see a Foundation 5 sample page by viewing _sit
 		* \_typography.scss
 		* \_variables.scss
 		* style.scss
-* lib (This is where we put all the functions included in functions.php)
+ * lib (This is where we put all the functions included in functions.php)
 	* init.php (Initialization stuff like theme support and sidebars)
 	* nav.php (Custom nav walker for Top Bar and examples)
 	* scripts.php (Enqueue scripts and stylesheets)
-* node_modules (This is where grunt and its dependecies are stored; Do not version control)
-* .bowerrc (Bower config file, we change the default install directory)
-* .editorconfig (This ensures our entire team uses the same tabs and charset)
-* .gitignore (Tell git to ignore bower_components, node_modules, and .DS_Store)
-* .jshintrc (JS Hint config)
-* Gruntfile.js (Grunt task declarations)
-* package.json (Project package and dependencies list)
-* bower.json (Project Bower dependencies)
-* ...
-* Wordpress theme files
+ * node_modules (This is where grunt and its dependecies are stored; Do not version control)
+ * .bowerrc (Bower config file, we change the default install directory)
+ * .editorconfig (This ensures our entire team uses the same tabs and charset)
+ * .gitignore (Tell git to ignore bower_components, node_modules, and .DS_Store)
+ * .jshintrc (JS Hint config)
+ * Gruntfile.js (Grunt task declarations)
+ * package.json (Project package and dependencies list)
+ * bower.json (Project Bower dependencies)
+ * ...
+ * Wordpress theme files
 
 # Credits
 
