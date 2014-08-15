@@ -1,4 +1,4 @@
-```php
+```html
 <article id="post-<?php the_ID() ?>" class="post hentry post-<?php the_ID() ?> post-type-<?php echo get_post_type() ?> category-<?php the_category() ?>">
 	<header class="entry-header">
 		<div class="entry-meta">
