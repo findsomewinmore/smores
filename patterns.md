@@ -1,4 +1,4 @@
-#Code Patterns
+#Code Pattern Library
 
 This document lists and explains various code patterns that should be used throughout a Wordpress website. The aim is to provide a reference for creating semantic, search engine friendly markup using [microformats](http://microformats.org/)
 
