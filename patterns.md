@@ -1,3 +1,10 @@
+#Code Patterns
+
+This document lists and explains various code patterns that should be used throughout a Wordpress website. The aim is to provide a reference for creating semantic, search engine friendly markup using [microformats](http://microformats.org/)
+
+
+##Post Entry
+
 ```html
 <article id="post-<?php the_ID() ?>" class="post hentry post-<?php the_ID() ?> post-type-<?php echo get_post_type() ?> category-<?php the_category() ?>">
 	<header class="entry-header">
