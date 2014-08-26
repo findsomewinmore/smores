@@ -23,22 +23,29 @@ This document lists and explains various code patterns that should be used throu
 		</h1>
 		<div class="entry-meta">
 			<div class="entry-date">
-					<time class="entry-date" datetime="2008-10-17T04:33:51+00:00">
-						17 October, 2008
+					<time class="entry-date" datetime="<?php the_time('c') ?>">
+						<!--
+							Time Format: November 6, 2010 @ 12:50 AM
+						-->
+						<?php the_time('F j, Y @ g:i A') ?> ?>
 					</time>
 			</div>
 			<div class="vcard">
-				<a class="url fn n" href="#" rel="author">Author</a>
+				<a class="url fn n" href="<?php the_author_link() ?>" target="_blank" rel="author"><?php the_author() ?></a>
 			</div>		
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	<div class="entry-content">
-		Content
+		<?php the_content() ?>
 	</div><!-- .entry-content -->
 	<footer class="entry-meta">
 		<span class="tag-links">
-			<a href="#" rel="tag">tag</a>
-			<a href="#" rel="tag">tag</a>
+			<?php 
+				$post_tags = get_the_tags();
+				foreach($post_tags as $tag){
+					echo '<a href="'. bloginfo('url') .'/?tag='. $tag->slug .'" rel="tag">'. $tag->name .'</a> ';
+				}
+			?>
 		</span>
 	</footer>
 </article>
