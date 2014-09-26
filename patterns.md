@@ -27,12 +27,12 @@ This document lists and explains various code patterns that should be used throu
 						<!--
 							Time Format: November 6, 2010 @ 12:50 AM
 						-->
-						<?php the_time('F j, Y @ g:i A') ?> ?>
+						<?php the_time('F j, Y @ g:i A') ?>
 					</time>
 			</div>
 			<div class="vcard">
 				<a class="url fn n" href="<?php the_author_link() ?>" target="_blank" rel="author"><?php the_author() ?></a>
-			</div>		
+			</div>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	<div class="entry-content">
@@ -40,7 +40,7 @@ This document lists and explains various code patterns that should be used throu
 	</div><!-- .entry-content -->
 	<footer class="entry-meta">
 		<span class="tag-links">
-			<?php 
+			<?php
 				$post_tags = get_the_tags();
 				foreach($post_tags as $tag){
 					echo '<a href="'. bloginfo('url') .'/?tag='. $tag->slug .'" rel="tag">'. $tag->name .'</a> ';
