@@ -22,8 +22,6 @@
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title><?php bloginfo('name') ?> &raquo; <?php is_front_page() ? bloginfo('description') : wp_title('|', true, 'right'); ?></title>
-    
     <meta name="description" content="<?php bloginfo('description') ?>" />
     <meta name="author" content="Findsome &amp; Winmore" />
     <!-- Google will often use this as its description of your page/site. Make it good. -->
