@@ -1,0 +1,16 @@
+{
+    "name": "Smores",
+    "version": "1.1.0",
+    "description": "Foundation Based Wordpress Starter Kit",
+    "config": {
+        "vendor-dir": "lib/vendor"
+    },
+    "require": {
+        "jjgrainger/wp-custom-post-type-class": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+            "lib/vendor{$name}": ["vendor/package"]
+        }
+    }
+}
