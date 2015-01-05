@@ -23,7 +23,7 @@
 
 $smores_includes = array(
   'lib/classes/smores.php',            // Initial theme setup and constants
-  'lib/vendor/jjgrainger/wp-custom-post-type-class/src/CPT.php',            // Initial theme setup and constants
+  'lib/vendor/jjgrainger/wp-custom-post-type-class/src/CPT.php',            // Custom Post Type Class
   'lib/init.php',            // Initial theme setup and constants
   'lib/nav.php',             // Custom nav modifications
   'lib/scripts.php',         // Scripts and stylesheets
