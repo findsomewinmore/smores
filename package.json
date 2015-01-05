@@ -4,7 +4,7 @@
   "description": "Foundation Based Wordpress Starter Kit",
   "main": "Gruntfile.js",
   "scripts": {
-    "postinstall": "node_modules/.bin/bower install && grunt && grunt watch",
+    "postinstall": "node_modules/.bin/bower install && composer install && grunt && grunt watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Findsome Winmore",
