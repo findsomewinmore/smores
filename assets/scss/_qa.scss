@@ -1,0 +1,35 @@
+.development img:not([alt]), .development img[alt=''] {
+  position: relative;
+  border: solid 5px;
+  -webkit-animation: pulse 1s linear infinite;
+  -moz-animation: pulse 1s linear infinite;
+  -ms-animation: pulse 1s linear infinite;
+  animation: pulse 1s linear infinite;
+}
+
+
+@keyframes "pulse" {
+ 0% {
+    border-color: rgba(165, 25, 25, 1);
+ }
+ 90% {
+    border-color: rgba(255,0,0,0.0);
+ }
+ 100% {
+    border-color: rgba(255,0,0,1.0);
+ }
+
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+   border-color: rgba(165, 25, 25, 1);
+ }
+ 90% {
+   border-color: rgba(255,0,0,0.0);
+ }
+ 100% {
+   border-color: rgba(255,0,0,1.0);
+ }
+
+}
