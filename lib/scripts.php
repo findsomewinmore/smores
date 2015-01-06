@@ -50,3 +50,17 @@ function smores_conditional_scripts () {
     echo '<![endif]-->';
 }
 add_action('wp_head', 'smores_conditional_scripts');
+
+//Add Scripts
+function smores_development_scripts() {
+  if($_SERVER['REMOTE_ADDR'] == '::1' || $_SERVER['REMOTE_ADDR'] == 'externalIPHere') { ?>
+    <script>
+      setTimeout(function(){
+        if($('script[src*=livereload]').length > 0) {
+          $('html').addClass('development');
+        }
+      }, 2000);
+    </script>
+  <?php }
+}
+add_action('wp_footer', 'smores_development_scripts', 99);
