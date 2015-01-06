@@ -159,6 +159,29 @@ module.exports = function(grunt) {
         parseFiles: true
       }
     },
+    
+  /**
+   * This is our favicon task.
+   * Takes 1 source file and converts it to
+   * required favicons and tile icons.
+   */
+    favicons: {
+      options: {
+        trueColor: true,
+        precomposed: true,
+        appleTouchBackgroundColor: "#FFFFFF",
+        coast: true,
+        windowsTile: true,
+        tileBlackWhite: false,
+        tileColor: "auto",
+        html: 'partials/meta-favicons.php',
+        HTMLPrefix: "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/"
+      },
+      icons: {
+        src: 'assets/img/favicons/favicon.src.png',
+        dest: 'assets/img/favicons'
+      }
+    },
 /**
  * This is our watch task.
  * It watches certain types
@@ -215,6 +238,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-favicons');
   grunt.loadNpmTasks('grunt-sass');
 
   // Register tasks
