@@ -36,8 +36,7 @@
    <meta name="apple-touch-fullscreen" content="yes" />
 
 
-    <link rel="shortcut icon" href="assets/img/favicons/favicon.png" />
-    <link rel="apple-touch-icon" href="assets/img/favicons/apple-touch-icon-precomposed.png" />
+   <?php get_template_part('partials/meta', 'favicons'); ?>
 
 	<?php 
 
