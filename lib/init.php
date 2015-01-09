@@ -19,6 +19,10 @@ function smores_setup() {
   
   //Add theme support for the <title> tag
   add_theme_support('title-tag');
+  
+  if(get_option('image_default_link_type') !== 'none') {
+    update_option('image_default_link_type', 'none' );
+  }
 }
 add_action('after_setup_theme', 'smores_setup');
 
