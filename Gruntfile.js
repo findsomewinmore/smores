@@ -40,9 +40,9 @@ module.exports = function(grunt) {
         },
         options: {
           //Minify our css
-          outputStyle: 'compressed', 
+          style: 'compressed', 
           //Do not create a .sass-cache directory
-          noCache: 'true'
+          noCache: true
         }
       }
     },
@@ -239,12 +239,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-favicons');
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
-    'sass:dist',
+    'sass',
     'uglify',
     'imagemin',
     'modernizr'
