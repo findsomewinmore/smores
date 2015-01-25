@@ -3,6 +3,9 @@
  * Smores initial setup
  */
 function smores_setup() {
+	
+	// Add custom post types
+	require_once('post-types/init.php');
 
   //Add menus
   add_theme_support('menus');
