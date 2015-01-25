@@ -4,3 +4,7 @@
 node_modules
 assets/bower_components
 .DS_Store
+*.swp
+*.swo
+*.log
+lib/vendor
