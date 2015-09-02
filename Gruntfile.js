@@ -1,36 +1,22 @@
-/**
- * Starting Gruntfile.js
- *
- * This is the most basic Gruntfile that we will use.
- * Browse through the code for more detailed comments on
- * individual tasks and functions
- */
 'use strict';
-module.exports = function(grunt) {
+/*global module, require*/
 
+module.exports = function config(grunt) {
+  require('load-grunt-tasks')(grunt);
   grunt.initConfig({
 
-/**
- * This is our jshint task.
- * It validates our javascript and
- * gives us feedback.
- */
-    jshint: {
+    eslint: {
       options: {
-        jshintrc: '.jshintrc'
+        configFile: '.eslintrc'
       },
-      all: [
+      target: [
         'Gruntfile.js',
-        'assets/js/*.js',
-        //When a file begins with !, that means do not add the file
+        'assets/js/**/*.js',
         '!assets/js/vendor/*.js',
         '!assets/js/scripts.min.js'
       ]
     },
-/**
- * This is our sass task.
- * It compiles our sass into css.
- */
+
     sass: {
       dist: {
         files: {
@@ -39,21 +25,13 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          //Minify our css
-          style: 'compressed', 
-          //Do not create a .sass-cache directory
+          style: 'compressed',
+
           noCache: true
         }
       }
     },
-/**
- * This is our uglify task.
- * It concatonates and minifies 
- * our javascript.
- *
- * Please comment out or delete any
- * references to unused foundation plugins.
- */
+
     uglify: {
       dist: {
         files: {
@@ -76,9 +54,9 @@ module.exports = function(grunt) {
             'assets/bower_components/foundation/js/foundation/foundation.tooltip.js',
             'assets/bower_components/foundation/js/foundation/foundation.topbar.js',
             'assets/bower_components/foundation/js/vendor/*.js',
+            'assets/js/_*.js',
             '!assets/bower_components/foundation/js/vendor/jquery.js',
-            '!assets/bower_components/foundation/js/vendor/modernizr.js',
-            'assets/js/_*.js'
+            '!assets/bower_components/foundation/js/vendor/modernizr.js'
           ],
           'assets/js/vendor/html5shiv.min.js': [
             'assets/bower_components/html5shiv/dist/html5shiv.min.js'
@@ -92,12 +70,7 @@ module.exports = function(grunt) {
         }
       }
     },
-/**
- * This is our imagemin task.
- * It optimizes our PNGs and JPGs.
- * If you want to optimize an image, make
- * sure to put it in the assets/img/src/ directory
- */
+
     imagemin: {
       png: {
         options: {
@@ -131,20 +104,14 @@ module.exports = function(grunt) {
             src: [
               '**/*.jpg'
             ],
-            // Could also match cwd. 
+            // Could also match cwd.
             dest: 'assets/img/',
             ext: '.jpg'
           }
         ]
       }
     },
-/**
- * This is our modernizr task.
- * It looks at our css and js
- * and generates a lean build of
- * modernizr with only the tests
- * that we need. 
- */
+
     modernizr: {
       build: {
         devFile: 'assets/bower_components/modernizr/modernizr.js',
@@ -159,52 +126,42 @@ module.exports = function(grunt) {
         parseFiles: true
       }
     },
-    
-  /**
-   * This is our favicon task.
-   * Takes 1 source file and converts it to
-   * required favicons and tile icons.
-   */
+
     favicons: {
       options: {
         trueColor: true,
         precomposed: true,
-        appleTouchBackgroundColor: "#FFFFFF",
+        appleTouchBackgroundColor: '#FFFFFF',
         coast: true,
         windowsTile: true,
         tileBlackWhite: false,
-        tileColor: "auto",
+        tileColor: 'auto',
         html: 'partials/meta-favicons.php',
-        HTMLPrefix: "<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/"
+        HTMLPrefix: '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicons/'
       },
       icons: {
         src: 'assets/img/favicons/favicon.src.png',
         dest: 'assets/img/favicons'
       }
     },
-/**
- * This is our watch task.
- * It watches certain types
- * of files for certain tasks
- * and then executes the grunt default
- * command when a file is changed/added
- */
+
     watch: {
       sass: {
         files: [
-          'assets/**/*.scss',
+          'assets/**/*.scss'
         ],
         tasks: ['sass:dist']
       },
       images: {
         files: ['assets/img/src/**/*.{png,jpg}'],
-        tasks: ['imagemin'],
+        tasks: ['imagemin']
       },
       js: {
         files: [
-          '<%= jshint.all %>'
+          'Gruntfile.js',
+          'assets/js/*.js'
         ],
-        tasks: ['jshint', 'uglify']
+        tasks: ['eslint', 'uglify']
       },
       livereload: {
         options: {
@@ -217,12 +174,7 @@ module.exports = function(grunt) {
         ]
       }
     },
-/**
- * This is our clear task.
- * It deletes the conents of the files
- * before anything is compliled into them
- * to prevent code from being duplicated
- */
+
     clean: {
       dist: [
         'assets/css/styles.min.css',
@@ -231,20 +183,10 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-modernizr');
-  grunt.loadNpmTasks('grunt-favicons');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-
-  // Register tasks
   grunt.registerTask('default', [
     'clean',
     'sass',
+    'eslint',
     'uglify',
     'imagemin',
     'modernizr'
