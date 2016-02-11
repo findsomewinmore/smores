@@ -12,5 +12,8 @@
         "installer-paths": {
             "lib/vendor{$name}": ["vendor/package"]
         }
+    },
+    "autoload": {
+        "psr-4": { "Smores\\": "lib/classes" }
     }
 }
